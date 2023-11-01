@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+.wrapper {
+    height: 100vh;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-list {
+    width: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item-form form {
+    display: flex;
+    margin-bottom: 24px;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[name="item"] {
+    border: none;
+    background: #d3d3d3;
+    padding: 8px 8px;
+    width: 100%;
+    border-radius: 8px;
+    color: #747474;
 }
 
-.App-link {
-  color: #61dafb;
+input[name="item"]:focus-visible {
+    outline: 1px solid #747474;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button[type="submit"] {
+    border: none;
+    background: #90ee90;
+    color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+input[name="item"]::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    width: 75%;
+}
+
+.item-controls {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-name {
+    text-transform: capitalize;
+    color: #747474;
+    display: flex;
+    align-items: center;
+}
+
+.item-cross {
+    border: none;
+    background: #90ee90;
+    color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+.item-remove {
+    border: none;
+    background: #FF0000;
+    color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.item-cross,
+.item-remove,
+button[type="submit"] {
+    cursor: pointer;
+    box-shadow: 3px 2px 9px -4px black;
+}
+
+.item-name.crossed {
+    text-decoration: line-through
 }
