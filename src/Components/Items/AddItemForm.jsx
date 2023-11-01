@@ -6,8 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function AddItemForm(props) {
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, { setSubmitting, resetForm }) => {
     props.handleSubmit(e.item)
+    resetForm();
+    setSubmitting(false);
   }
 
   const validationSchema = Yup.object().shape({
