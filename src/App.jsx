@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import AddItemForm from "./Components/Items/AddItemForm"
 import Items from "./Components/Items/Items"
-import "./App.css"
+import "./Assets/Scss/App.scss"
 
 export default function App() {
 
   const [items, setItems] = useState([])
+  const [itemToEdit, setItemToEdit] = useState({})
 
   useEffect(() => {
     const storeItemName = localStorage.getItem("itemNames")
@@ -14,34 +15,56 @@ export default function App() {
     }
   }, [])
 
-  const handleSubmit = (newItem) => {
-    const updatedItems = [...items, {name: newItem, class: ""}]
-    setItems(updatedItems)
-    localStorage.setItem("itemNames", JSON.stringify(updatedItems))
+  const handleSubmit = (item) => {
+    const editItem = items.filter((_, i) => i === itemToEdit.index)
+    let update
+
+    if (editItem.length === 0) {
+      update = [...items, {name: item, class: ""}]
+
+      setItems(update)
+    } else {
+      update = [...items]
+
+      update[itemToEdit.index].name = item
+      setItems(update)
+      setItemToEdit({})
+    }
+
+    localStorage.setItem("itemNames", JSON.stringify(update))
   }
 
   const handleRemove = (index) => {
-    const updatedItems = items.filter((_, i) => i !== index)
+    const removeItem = items.filter((_, i) => i !== index)
 
-    setItems(updatedItems)
-    localStorage.setItem("itemNames", JSON.stringify(updatedItems))
+    setItems(removeItem)
+    localStorage.setItem("itemNames", JSON.stringify(removeItem))
   }
 
-  const handleCross = (index) => {
-    const updatedItems = [...items]
+  const handleCheck = (index) => {
+    const updatedItem = [...items]
 
-    if (updatedItems[index]) {
-      updatedItems[index].class = "crossed"
+    if (updatedItem[index]) {
+      updatedItem[index].class = "crossed"
     }
 
-    setItems(updatedItems)
-    localStorage.setItem("itemNames", JSON.stringify(updatedItems))
+    setItems(updatedItem)
+    localStorage.setItem("itemNames", JSON.stringify(updatedItem))
+  }
+
+  const handleEdit = (index) => {
+    const editItem = items.filter((_, i) => i === index).map(e => e.name)
+
+    setItemToEdit({"editItem": editItem, "index": index})
   }
 
   return (
     <div className="wrapper">
       <div className="product-list">
-        <AddItemForm handleSubmit={handleSubmit}/>
+        <AddItemForm
+          handleSubmit={handleSubmit}
+          itemToEdit={itemToEdit}
+        />
         {
           items.map((item, index) =>
             <Items
@@ -50,7 +73,8 @@ export default function App() {
               itemClass={item.class}
               index={index}
               remove={handleRemove}
-              cross={handleCross}
+              cross={handleCheck}
+              edit={handleEdit}
             />
           )
         }
