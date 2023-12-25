@@ -23,8 +23,6 @@ body {
 }
 
 .product-list {
-
-    padding: 24px;
     backdrop-filter: blur(10px);
     width: 300px;
     margin: 0 20px;
@@ -111,11 +109,19 @@ button[type="submit"] {
 
     @media screen and (max-width: 600px) {
         &-form {
-            padding: 0 24px;
+            padding: 0 12px !important;
         }
 
-        padding: 0 24px;
+        padding: 0 12px;
     }
+
+    @media screen and (min-width: 600px) {
+        &-form {
+            padding: 0 24px;
+        }
+    }
+
+    padding: 0 24px;
 
     &-form form {
         display: flex;
