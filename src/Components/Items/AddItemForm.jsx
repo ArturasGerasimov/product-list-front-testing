@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react"
 import * as Yup from "yup"
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function AddItemForm(props) {
@@ -15,11 +16,17 @@ export default function AddItemForm(props) {
 
   const validationSchema = Yup.object().shape({
     item: Yup.string()
-      .required("Item cannot be empty"),
+      .required("Input cannot be empty"),
   });
 
   const initialValues = {
     item: "",
+  }
+
+  const handleSubmitImage = () => {
+    return typeof props.itemToEdit.index === "undefined"
+      ? <FontAwesomeIcon icon={faPlus} />
+      : <FontAwesomeIcon icon={faCheck} />
   }
 
   useEffect(() => {
@@ -35,14 +42,16 @@ export default function AddItemForm(props) {
         validationSchema={validationSchema}
         initialValues={initialValues}
         onSubmit={handleSubmit}
+        validateOnChange={false}
+        validateOnBlur={false}
       >
         <Form>
           <label htmlFor="item" />
           <Field id="item" name="item" placeholder="Add item to list" />
-          <ErrorMessage name="item" component="span" />
+          <ErrorMessage name="item" component="span" id="message__error" />
 
           <button type="submit">
-            <FontAwesomeIcon icon={faPlus} />
+            { handleSubmitImage() }
           </button>
         </Form>
       </Formik>
