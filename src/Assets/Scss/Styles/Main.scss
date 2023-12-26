@@ -17,6 +17,7 @@ body {
 
 .product-list {
   backdrop-filter: blur(10px);
+  background: #d3d3d34a;
   width: 300px;
   margin: 0 20px;
   border-radius: 12px;
@@ -51,50 +52,6 @@ input[name="item"] {
 
 }
 
-button[type="submit"] {
-  border: none;
-  background: rgba(10, 150, 150, 0.44);
-  color: #fff;
-  border-radius: 50%;
-  height: 30px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  margin-left: 8px;
-  cursor: pointer;
-  box-shadow: 3px 2px 9px -4px black;
-}
-
-.button {
-  border: none;
-  color: #fff;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  margin-left: 8px;
-  cursor: pointer;
-  box-shadow: 3px 2px 9px -4px black;
-
-  &__cross {
-    background: rgba(10, 150, 150, 0.44);
-  }
-
-  &__remove {
-    background: rgba(169, 11, 11, 0.68);
-  }
-
-  &__edit {
-    background: #d3d3d3;
-    font-size: 14px;
-  }
-}
-
 .item {
   display: flex;
   justify-content: space-between;
@@ -118,23 +75,18 @@ button[type="submit"] {
 
   &-form form {
     display: flex;
-    margin-bottom: 24px;
+    margin: 24px 0;
     position: relative;
   }
 
-  &-name {
-    //width: 75%;
-  }
-
   &-controls {
-    //width: 25%;
     display: flex;
     justify-content: space-between;
   }
 
   &-name {
     text-transform: capitalize;
-    color: #747474;
+    color: #fff;
     display: flex;
     align-items: center;
   }

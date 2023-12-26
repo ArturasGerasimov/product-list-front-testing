@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, {useState, useEffect} from "react"
 import AddItemForm from "./Components/Items/AddItemForm"
 import Items from "./Components/Items/Items"
 import "./Assets/Scss/App.scss"
+import NavBar from "./Components/NavBar/NavBar"
+import DeletedItems from "./Components/DeletedItems/DeletedItems"
+import {getFiveDaysFromNow, getFiveDaysFromNowFormatted} from "./Utils/dates"
 
 export default function App() {
 
   const [items, setItems] = useState([])
+  const [deletedItems, setDeletedItems] = useState([])
   const [itemToEdit, setItemToEdit] = useState({})
+  const [displayList, setDisplayList] = useState(true)
+  const [displayDeletedItems, setDisplayDeletedItems] = useState(false)
 
   useEffect(() => {
-    const storeItemName = localStorage.getItem("itemNames")
-    if (storeItemName) {
-      setItems(JSON.parse(storeItemName))
+    const storeItem = localStorage.getItem("items")
+    const storeDeletedItems = localStorage.getItem("deletedItems")
+
+    if (storeItem) {
+      setItems(JSON.parse(storeItem))
+    }
+
+    if (storeDeletedItems) {
+      setDeletedItems(JSON.parse(storeDeletedItems))
     }
   }, [])
 
@@ -31,15 +43,29 @@ export default function App() {
       setItemToEdit({})
     }
 
-    localStorage.setItem("itemNames", JSON.stringify(update))
+    localStorage.setItem("items", JSON.stringify(update))
   }
 
   const handleRemove = (index) => {
     const removeItem = items.filter((_, i) => i !== index)
+    handleSoftDelete(index)
 
     setItems(removeItem)
-    localStorage.setItem("itemNames", JSON.stringify(removeItem))
+
+    localStorage.setItem("items", JSON.stringify(removeItem))
   }
+
+  const handleSoftDelete = (index) => {
+    const findDeletedItem = { ...items[index] }
+    findDeletedItem.class = "deleted";
+    findDeletedItem.timeToDelete = getFiveDaysFromNowFormatted()
+
+    const updatedDeletedItems = [...deletedItems, findDeletedItem]
+
+    setDeletedItems(updatedDeletedItems);
+
+    localStorage.setItem("deletedItems", JSON.stringify(updatedDeletedItems))
+  };
 
   const handleCheck = (index) => {
     const updatedItem = [...items]
@@ -49,7 +75,7 @@ export default function App() {
     }
 
     setItems(updatedItem)
-    localStorage.setItem("itemNames", JSON.stringify(updatedItem))
+    localStorage.setItem("items", JSON.stringify(updatedItem))
   }
 
   const handleEdit = (index) => {
@@ -58,27 +84,42 @@ export default function App() {
     setItemToEdit({"editItem": editItem, "index": index})
   }
 
+  const handleDisplayWindows = (value) => {
+    setDisplayList(value === "displayList")
+    setDisplayDeletedItems(value === "displayDeletedItems")
+  }
+
   return (
     <div className="wrapper">
-      <div className="product-list">
-        <AddItemForm
-          handleSubmit={handleSubmit}
-          itemToEdit={itemToEdit}
+      <NavBar handleDisplayWindows={handleDisplayWindows}/>
+      {displayDeletedItems &&
+        <DeletedItems
+          deletedItems={deletedItems}
         />
-        {
-          items.map((item, index) =>
-            <Items
-              key={index}
-              itemName={item.name}
-              itemClass={item.class}
-              index={index}
-              remove={handleRemove}
-              cross={handleCheck}
-              edit={handleEdit}
+      }
+      {displayList &&
+        <div className="product-list">
+          <>
+            <AddItemForm
+              handleSubmit={handleSubmit}
+              itemToEdit={itemToEdit}
             />
-          )
-        }
-      </div>
+            {
+              items.map((item, index) =>
+                <Items
+                  key={index}
+                  itemName={item.name}
+                  itemClass={item.class}
+                  index={index}
+                  remove={handleRemove}
+                  cross={handleCheck}
+                  edit={handleEdit}
+                />
+              )
+            }
+          </>
+        </div>
+      }
     </div>
   )
 }
