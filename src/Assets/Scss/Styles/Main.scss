@@ -23,7 +23,7 @@ body {
   border-radius: 12px;
 
   @media screen and (max-width: 600px) {
-    padding-top: 50px;
+    padding-top: 36px;
     width: 100%;
   }
 
@@ -46,10 +46,9 @@ input[name="item"] {
   }
 
   &::placeholder {
-    color: #fff;
+    color: #000;
     opacity: 1;
   }
-
 }
 
 .item {
@@ -86,7 +85,6 @@ input[name="item"] {
 
   &-name {
     text-transform: capitalize;
-    color: #fff;
     display: flex;
     align-items: center;
   }

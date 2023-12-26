@@ -2,7 +2,7 @@
 
 button[type="submit"] {
   border: none;
-  background: rgba(10, 150, 150, 0.44);
+  background: rgba(10, 150, 150, 1);
   color: #fff;
   border-radius: 50%;
   height: 30px;
@@ -30,15 +30,15 @@ button[type="submit"] {
   cursor: pointer;
   box-shadow: 3px 2px 9px -4px black;
 
-  &__cross {
-    background: rgba(10, 150, 150, 0.44);
+  &__green {
+    background: rgba(10, 150, 150, 1);
   }
 
-  &__remove {
-    background: rgba(169, 11, 11, 0.68);
+  &__red {
+    background: rgba(169, 11, 11, 1);
   }
 
-  &__edit {
+  &__gray {
     background: #d3d3d3;
     font-size: 14px;
   }

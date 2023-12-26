@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import AddItemForm from "./Components/Items/AddItemForm"
 import Items from "./Components/Items/Items"
 import "./Assets/Scss/App.scss"
 import NavBar from "./Components/NavBar/NavBar"
 import DeletedItems from "./Components/DeletedItems/DeletedItems"
-import {getFiveDaysFromNow, getFiveDaysFromNowFormatted} from "./Utils/dates"
+import { getFiveDaysFromNowFormatted } from "./Utils/dates"
 
 export default function App() {
 
@@ -32,7 +32,7 @@ export default function App() {
     let update
 
     if (editItem.length === 0) {
-      update = [...items, {name: item, class: ""}]
+      update = [...items, { name: item, class: "" }]
 
       setItems(update)
     } else {
@@ -57,15 +57,15 @@ export default function App() {
 
   const handleSoftDelete = (index) => {
     const findDeletedItem = { ...items[index] }
-    findDeletedItem.class = "deleted";
+    findDeletedItem.class = "deleted"
     findDeletedItem.timeToDelete = getFiveDaysFromNowFormatted()
 
     const updatedDeletedItems = [...deletedItems, findDeletedItem]
 
-    setDeletedItems(updatedDeletedItems);
+    setDeletedItems(updatedDeletedItems)
 
     localStorage.setItem("deletedItems", JSON.stringify(updatedDeletedItems))
-  };
+  }
 
   const handleCheck = (index) => {
     const updatedItem = [...items]
@@ -81,7 +81,7 @@ export default function App() {
   const handleEdit = (index) => {
     const editItem = items.filter((_, i) => i === index).map(e => e.name)
 
-    setItemToEdit({"editItem": editItem, "index": index})
+    setItemToEdit({ "editItem": editItem, "index": index })
   }
 
   const handleDisplayWindows = (value) => {
@@ -89,11 +89,29 @@ export default function App() {
     setDisplayDeletedItems(value === "displayDeletedItems")
   }
 
+  const handleRestore = (index) => {
+    const targetedItem = deletedItems[index]
+
+    if (targetedItem) {
+      delete targetedItem.class
+      delete targetedItem.timeToDelete
+
+      const updateItems = [...items, targetedItem]
+      setItems(updateItems)
+      localStorage.setItem("items", JSON.stringify(updateItems))
+
+      const updatedDeletedItems = deletedItems.filter((_, i) => i !== index)
+      setDeletedItems(updatedDeletedItems)
+      localStorage.setItem("deletedItems", JSON.stringify(updatedDeletedItems))
+    }
+  }
+
   return (
     <div className="wrapper">
       <NavBar handleDisplayWindows={handleDisplayWindows}/>
       {displayDeletedItems &&
         <DeletedItems
+          handleRestore={handleRestore}
           deletedItems={deletedItems}
         />
       }

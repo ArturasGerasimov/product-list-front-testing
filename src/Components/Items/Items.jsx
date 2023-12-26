@@ -21,13 +21,13 @@ export default function Items(props) {
     <div className="item">
       <div className={`item-name ${props.itemClass}`}>{props.itemName}</div>
       <div className="item-controls">
-        <div className="button button__cross" onClick={handleCheck}>
+        <div className="button button__green" onClick={handleCheck}>
           <FontAwesomeIcon icon={faCheck}/>
         </div>
-        <div className="button button__edit" onClick={handleEdit}>
+        <div className="button button__gray" onClick={handleEdit}>
           <FontAwesomeIcon icon={faPen}/>
         </div>
-        <div className="button button__remove" onClick={handleRemove}>
+        <div className="button button__red" onClick={handleRemove}>
           <FontAwesomeIcon icon={faTimes}/>
         </div>
       </div>
