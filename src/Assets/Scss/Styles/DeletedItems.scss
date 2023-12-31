@@ -30,4 +30,8 @@
   &__item:not(:last-child) {
     margin-bottom: 8px;
   }
+
+  &__controls {
+    display: flex;
+  }
 }
