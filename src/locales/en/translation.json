@@ -7,8 +7,7 @@
     "here_you_can_restore": "Here you can restore deleted items"
   },
   "nav_bar": {
-    "list": "List",
-    "deleted_items": "Deleted Items"
+
   },
   "errors": {
     "input_not_empty": "Input cannot be empty"
