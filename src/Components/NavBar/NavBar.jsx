@@ -5,7 +5,6 @@ import { faList } from "@fortawesome/free-solid-svg-icons/faList"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function NavBar(props) {
-  const t = props.t
 
   const handleDisplays = (value) => {
     props.handleDisplayWindows(value)
