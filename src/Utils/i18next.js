@@ -2,7 +2,7 @@ import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 import en from "../locales/en/translation.json"
 import lt from "../locales/lt/translation.json"
-import ru from "../locales/ru/translation.json"
+import ua from "../locales/ua/translation.json"
 import Cookies from "js-cookie"
 
 i18n
@@ -18,8 +18,8 @@ i18n
       lt: {
         translation: lt
       },
-      ru: {
-        translation: ru
+      ua: {
+        translation: ua
       }
     },
     lng: Cookies.get("lang") ? Cookies.get("lang") : "lt",
