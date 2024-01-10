@@ -5,7 +5,8 @@ import NavBar from "./NavBar/NavBar"
 import DeletedItems from "./DeletedItems/DeletedItems"
 import { getFiveDaysFromNowFormatted } from "../Utils/dates"
 import { useTranslation } from "react-i18next"
-import i18n from "../Utils/i18next"
+// eslint-disable-next-line no-unused-vars
+ import i18n from "../Utils/i18next"
 
 export default function Home() {
 
