@@ -4,6 +4,7 @@ import { faTrashRestore } from "@fortawesome/free-solid-svg-icons/faTrashRestore
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes"
 
 export default function DeletedItems(props) {
+  const t = props.t
 
   const handleRestore = (index) => {
     props.handleRestore(index)
@@ -17,11 +18,11 @@ export default function DeletedItems(props) {
     <div className="deleted-items">
       {
         props.deletedItems.length === 0
-          ? <div className="deleted-items__message">No deleted items to restore</div>
+          ? <div className="deleted-items__message">{t("deleted_items.no_deleted_items")}</div>
           :
           <>
             <div className="deleted-items__title">
-              Here you can restore deleted items
+              {t("deleted_items.here_you_can_restore")}
             </div>
             {
               props.deletedItems.map((item, index) =>

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function AddItemForm(props) {
   const formikRef = useRef()
+  const t = props.t
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     props.handleSubmit(values.item)
@@ -16,7 +17,7 @@ export default function AddItemForm(props) {
 
   const validationSchema = Yup.object().shape({
     item: Yup.string()
-      .required("Input cannot be empty"),
+      .required(t("errors.input_not_empty")),
   });
 
   const initialValues = {
@@ -47,7 +48,7 @@ export default function AddItemForm(props) {
       >
         <Form>
           <label htmlFor="item" />
-          <Field id="item" name="item" placeholder="Add item to list" />
+          <Field id="item" name="item" placeholder={t("home.add_item")} />
           <ErrorMessage name="item" component="span" id="message__error" />
 
           <button type="submit">

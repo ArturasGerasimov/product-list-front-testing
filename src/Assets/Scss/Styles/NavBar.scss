@@ -1,6 +1,26 @@
 .navigation-bar {
+  display: flex;
+  justify-content: space-between;
   backdrop-filter: blur(10px);
   background: #d3d3d34a;
   width: 100%;
   padding: 12px;
+
+  .language-selectors {
+    display: flex;
+    align-items: center;
+
+    &__lang {
+      padding: 0;
+      border: none;
+      margin: 0 8px;
+      background: transparent;
+      cursor: pointer;
+
+      img {
+        width: 28px;
+        height: 15px;
+      }
+    }
+  }
 }

@@ -4,6 +4,8 @@ import Items from "./Items/Items"
 import NavBar from "./NavBar/NavBar"
 import DeletedItems from "./DeletedItems/DeletedItems"
 import { getFiveDaysFromNowFormatted } from "../Utils/dates"
+import { useTranslation } from "react-i18next"
+import i18n from "../Utils/i18next"
 
 export default function Home() {
 
@@ -12,6 +14,8 @@ export default function Home() {
   const [itemToEdit, setItemToEdit] = useState({})
   const [displayList, setDisplayList] = useState(true)
   const [displayDeletedItems, setDisplayDeletedItems] = useState(false)
+
+  const { t } = useTranslation()
 
   useEffect(() => {
     const storeItem = localStorage.getItem("items")
@@ -116,9 +120,13 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      <NavBar handleDisplayWindows={handleDisplayWindows}/>
+      <NavBar
+        t={t}
+        handleDisplayWindows={handleDisplayWindows}
+      />
       {displayDeletedItems &&
         <DeletedItems
+          t={t}
           handleRestore={handleRestore}
           deletedItems={deletedItems}
           handlePermanentRemove={handlePermanentRemove}
@@ -128,6 +136,7 @@ export default function Home() {
         <div className="product-list">
           <>
             <AddItemForm
+              t={t}
               handleSubmit={handleSubmit}
               itemToEdit={itemToEdit}
             />
