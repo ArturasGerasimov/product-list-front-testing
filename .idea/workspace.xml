@@ -5,64 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a1250da-7701-4439-ab85-a78ab3293c58" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list-back/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/list-back/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/Raleway-Italic-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/Raleway-VariableFont_wght.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Fonts/static/Raleway-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Pictures/background-main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Pictures/flags/lt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Pictures/flags/ua.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Pictures/flags/uk.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/App.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/Buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/DeletedItems.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/Fonts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/Main.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/NavBar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Scss/Styles/Reset.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/DeletedItems/DeletedItems.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Items/AddItemForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Items/Items.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Language/Language.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/dates.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/i18next.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/en/translation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/lt/translation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/ua/translation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list-back" beforeDir="false" afterPath="$PROJECT_DIR$/list-back" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list-back/.github/workflows/issues.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list-back/.github/workflows/pull-requests.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list-back/.github/workflows/tests.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list-back/.github/workflows/update-changelog.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708450653441</updated>
-      <workItem from="1708450656061" duration="5702000" />
+      <workItem from="1708450656061" duration="6150000" />
     </task>
     <servers />
   </component>
