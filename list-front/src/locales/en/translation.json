@@ -1,0 +1,15 @@
+{
+  "home": {
+    "add_item": "Add item to list"
+  },
+  "deleted_items": {
+    "no_deleted_items": "No deleted items to restore",
+    "here_you_can_restore": "Here you can restore deleted items"
+  },
+  "nav_bar": {
+
+  },
+  "errors": {
+    "input_not_empty": "Input cannot be empty"
+  }
+}

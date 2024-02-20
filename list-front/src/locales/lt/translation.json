@@ -1,0 +1,15 @@
+{
+  "home": {
+    "add_item": "Pridėti į sąrašą"
+  },
+  "deleted_items": {
+    "no_deleted_items": "Nėra ištrintų elementų, kuriuos būtų galima atkurti",
+    "here_you_can_restore": "Čia galite atkurti ištrintus elementus"
+  },
+  "nav_bar": {
+
+  },
+  "errors": {
+    "input_not_empty": "Įvestis negali būti tuščia"
+  }
+}
