@@ -33,7 +33,7 @@ export default function NavBar(props) {
   return (
     <div className="navigation-bar">
       <div>
-        <button className="button-navigate button-navigate__primary" onClick={() => fetchData( [1,3,4,])}>
+        <button className="button-navigate button-navigate__primary" onClick={() => fetchData( "test")}>
           api test
         </button><button className="button-navigate button-navigate__primary" onClick={() => handleDisplays("displayList")}>
           <FontAwesomeIcon icon={faList}/>
