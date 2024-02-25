@@ -2,20 +2,16 @@ import React, { useState, useEffect } from "react"
 import AddItemForm from "./Items/AddItemForm"
 import Items from "./Items/Items"
 import NavBar from "./NavBar/NavBar"
-import DeletedItems from "./DeletedItems/DeletedItems"
 import { getFiveDaysFromNowFormatted } from "../Utils/dates"
 import { useTranslation } from "react-i18next"
 // eslint-disable-next-line no-unused-vars
- import i18n from "../Utils/i18next"
+import i18n from "../Utils/i18next"
 
 export default function Home() {
 
   const [items, setItems] = useState([])
   const [deletedItems, setDeletedItems] = useState([])
   const [itemToEdit, setItemToEdit] = useState({})
-  const [displayList, setDisplayList] = useState(true)
-  const [displayDeletedItems, setDisplayDeletedItems] = useState(false)
-
   const { t } = useTranslation()
 
   useEffect(() => {
@@ -97,11 +93,6 @@ export default function Home() {
     setItemToEdit({ "editItem": editItem, "index": index })
   }
 
-  const handleDisplayWindows = (value) => {
-    setDisplayList(value === "displayList")
-    setDisplayDeletedItems(value === "displayDeletedItems")
-  }
-
   const handleRestore = (index) => {
     const targetedItem = deletedItems[index]
 
@@ -123,17 +114,7 @@ export default function Home() {
     <div className="wrapper">
       <NavBar
         t={t}
-        handleDisplayWindows={handleDisplayWindows}
       />
-      {displayDeletedItems &&
-        <DeletedItems
-          t={t}
-          handleRestore={handleRestore}
-          deletedItems={deletedItems}
-          handlePermanentRemove={handlePermanentRemove}
-        />
-      }
-      {displayList &&
         <div className="product-list">
           <>
             <AddItemForm
@@ -156,7 +137,6 @@ export default function Home() {
             }
           </>
         </div>
-      }
     </div>
   )
 }
