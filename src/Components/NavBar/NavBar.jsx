@@ -12,9 +12,6 @@ export default function NavBar(props) {
   return (
     <div className="navigation-bar">
       <div>
-        <button className="button-navigate button-navigate__primary" onClick={() => navigate('/register')}>
-          Register
-        </button>
         <button className="button-navigate button-navigate__primary" onClick={() => navigate('/')}>
           <FontAwesomeIcon icon={faList}/>
         </button>
